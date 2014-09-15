@@ -1,1 +1,19 @@
 <h1><%= full_name(@patient) %> Patient Prescriptions</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Dosage / Schedule</th>
+    <th>Dates</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @patient.prescriptions.each do |script| %>
+    <tr>
+      <td><%= script.medications.name %></td>
+      <td><%= script.medications.name %></td>
+      <td><%= script.medications.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
