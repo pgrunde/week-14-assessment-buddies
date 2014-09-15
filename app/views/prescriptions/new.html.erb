@@ -1,4 +1,4 @@
-<%= form_for @prescription , url: patient_prescriptions_path do |p| %>
+<%= form_for @prescription , url: patient_prescriptions_path(:patient_id => @patient.id) do |p| %>
   <ul>
     <li>
         <%= p.label :medication_id, "Medication Name" %>
