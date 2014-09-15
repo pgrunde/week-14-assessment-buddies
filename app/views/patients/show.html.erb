@@ -1,4 +1,6 @@
 <h1><%= full_name(@patient) %> Patient Prescriptions</h1>
+<%= link_to "Add Prescription", new_patient_prescription_path(@patient.id) %>
+
 <table class="table">
   <thead>
   <tr>
@@ -17,3 +19,4 @@
   <% end %>
   </tbody>
 </table>
+

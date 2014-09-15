@@ -1,0 +1,27 @@
+<%= form_for @prescription , url: patient_prescriptions_path do |p| %>
+  <ul>
+    <li>
+        <%= p.label :medication_id, "Medication Name" %>
+        <%= p.select(:medication_id, Medication.all.collect {|m| [m.name, m.id]}, { include_blank: "None" }) %>
+      </li>
+      <li>
+        <%= p.label :dosage%>
+        <%= p.text_field :dosage %>
+      </li>
+      <li>
+        <%= p.label :schedule %>
+        <%= p.text_field :schedule %>
+      </li>
+      <li>
+        <%= p.label :starts_on %>
+        <%= p.date_select :starts_on %>
+      </li>
+      <li>
+        <%= p.label :ends_on %>
+        <%= p.date_select :ends_on %>
+      </li>
+      <li>
+        <%= p.submit "Submit" %>
+      </li>
+    </ul>
+<% end %>

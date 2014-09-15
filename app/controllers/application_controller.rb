@@ -11,6 +11,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def all_meds
+    @medications = Medication.all
+  end
+
+  def find_patient(id)
+    @patient = Patient.find(id)
+  end
+
   helper_method :current_user
 
 end

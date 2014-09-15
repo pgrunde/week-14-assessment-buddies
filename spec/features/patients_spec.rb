@@ -21,4 +21,17 @@ feature "Patients" do
     expect(page).to have_content "Some Patient Patient Prescriptions"
   end
 
+  scenario "patients can add prescriptions" do
+    user = create_user
+    patient = create_patient
+    login(user)
+    click_on (patient.first_name + " " + patient.last_name)
+    medication = create_medication
+
+    click_on ("Add Prescription")
+
+    expect(page).to have_button "Submit"
+
+  end
+
 end
